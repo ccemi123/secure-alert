@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Alerts - Notification Services</title>
+    <style>
+        body { font-family: Arial; margin: 40px; }
+        .container { max-width: 800px; margin: auto; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Secure Alerts</h1>
+        <p>Secure Alerts provides enterprise notification services for businesses.</p>
+        
+        <h2>About Us</h2>
+        <p>Secure Alerts is a leading provider of transactional messaging and security alerts. We help businesses communicate important information to their customers in real-time.</p>
+        
+        <h2>Opt-in for Alerts</h2>
+        <p>Enter your phone number to receive security notifications:</p>
+        
+        <form action="/optin" method="POST">
+            <input type="tel" name="phone" placeholder="Your phone number" required>
+            <br>
+            <input type="checkbox" name="optin" value="yes">
+            <label>I consent to receive security alerts from Secure Alerts</label>
+            <br><br>
+            <button type="submit">Subscribe</button>
+        </form>
+        
+        <p><small>Message frequency varies. Msg & data rates may apply. Reply STOP to cancel.</small></p>
+    </div>
+</body>
+</html>

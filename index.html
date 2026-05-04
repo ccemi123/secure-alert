@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Alert Messages | Transactional SMS Notifications</title>
+    <title>Secure Alert Messages | Transactional SMS Alerts</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0f1e 0%, #0d1525 100%);
+            background: #0a0f1e;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -26,220 +26,117 @@
             width: 100%;
             background: #131a2c;
             border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            overflow: hidden;
             border: 1px solid #2a3a5c;
+            overflow: hidden;
         }
 
         .header {
             background: linear-gradient(135deg, #0b1120 0%, #1a2a45 100%);
-            color: white;
             padding: 45px 40px;
             text-align: center;
             border-bottom: 1px solid #2a3a5c;
         }
 
         .header h1 {
-            font-size: 2.5rem;
-            letter-spacing: 1px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ffffff 0%, #8aa3cc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 2.2rem;
+            color: white;
         }
 
-        .header .tagline {
-            font-size: 1rem;
+        .header p {
             color: #8aa3cc;
-            margin-top: 12px;
+            margin-top: 10px;
         }
 
         .content {
-            padding: 45px 40px;
+            padding: 40px;
         }
 
-        .about-section {
-            margin-bottom: 35px;
-        }
-
-        .about-section h2 {
-            color: #c0d4ff;
-            margin-bottom: 18px;
-            border-left: 4px solid #3b6eff;
-            padding-left: 18px;
-            font-weight: 600;
-        }
-
-        .about-section p {
-            color: #b8c7e7;
-            line-height: 1.7;
-            margin-bottom: 18px;
-            font-size: 1rem;
-        }
-
-        .features {
-            display: flex;
-            gap: 24px;
-            margin: 35px 0;
-            flex-wrap: wrap;
-        }
-
-        .feature {
-            flex: 1;
+        .use-case-box {
             background: #0f1728;
-            padding: 22px 18px;
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid #253654;
+            border-left: 4px solid #3b6eff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 12px;
         }
 
-        .feature h3 {
+        .use-case-box h3 {
             color: #c0d4ff;
-            margin-bottom: 12px;
-            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
 
-        .feature p {
-            color: #8aa0c4;
-            font-size: 0.9rem;
+        .use-case-box p {
+            color: #b8c7e7;
         }
 
         .optin-form {
             background: #0d1424;
-            padding: 35px;
+            padding: 30px;
             border-radius: 20px;
-            margin-top: 25px;
             border: 1px solid #253654;
         }
 
         .optin-form h3 {
             color: #c0d4ff;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: center;
-            font-size: 1.5rem;
         }
 
         .form-group {
-            margin-bottom: 22px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 500;
             color: #b0c4f0;
-            font-size: 0.9rem;
         }
 
         .form-group input {
             width: 100%;
-            padding: 14px 16px;
+            padding: 12px;
             background: #0a0f1c;
             border: 1px solid #2a3a5c;
-            border-radius: 12px;
-            font-size: 15px;
+            border-radius: 8px;
             color: white;
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: #3b6eff;
-        }
-
-        .form-group input::placeholder {
-            color: #4a5a7a;
         }
 
         .checkbox-group {
             display: flex;
-            align-items: flex-start;
-            gap: 14px;
-            margin: 25px 0;
+            gap: 12px;
+            margin: 20px 0;
             background: #0a0f1c;
-            padding: 18px;
+            padding: 15px;
             border-radius: 12px;
-            border: 1px solid #253654;
         }
 
         .checkbox-group input {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             margin-top: 2px;
-            accent-color: #3b6eff;
-        }
-
-        .checkbox-group label {
-            font-size: 13px;
-            line-height: 1.5;
-            color: #a0b5dc;
-        }
-
-        .checkbox-group label strong {
-            color: #c0d4ff;
         }
 
         .btn-submit {
             width: 100%;
-            background: linear-gradient(135deg, #2b4fdd 0%, #1a3a9e 100%);
+            background: #2b4fdd;
             color: white;
+            padding: 14px;
             border: none;
-            padding: 15px;
-            font-size: 16px;
-            font-weight: 700;
             border-radius: 40px;
+            font-weight: bold;
             cursor: pointer;
-            transition: all 0.2s;
-            margin-top: 10px;
-        }
-
-        .btn-submit:hover {
-            background: linear-gradient(135deg, #3b5fef 0%, #2a4abe 100%);
-            transform: scale(1.01);
         }
 
         .footer {
             background: #070c18;
-            color: #5a6e96;
-            padding: 25px 40px;
+            padding: 20px;
             text-align: center;
             border-top: 1px solid #1a2538;
         }
 
-        .footer-links {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
+        .footer a {
             color: #6b8eff;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 13px;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        .disclaimer {
-            font-size: 11px;
-            color: #5a6e96;
-            margin-top: 15px;
-            text-align: center;
-            line-height: 1.5;
-        }
-
-        .copyright {
-            font-size: 11px;
-            color: #4a5a7a;
-            margin-top: 15px;
-        }
-
-        @media (max-width: 700px) {
-            .header h1 { font-size: 1.6rem; }
-            .content { padding: 25px 20px; }
-            .features { flex-direction: column; }
-            .optin-form { padding: 20px; }
+            margin: 0 10px;
         }
     </style>
 </head>
@@ -247,29 +144,13 @@
     <div class="container">
         <div class="header">
             <h1>SECURE ALERT MESSAGES</h1>
-            <div class="tagline">Real-Time Transactional Alerts & Security Notifications</div>
+            <p>Transactional SMS Notifications</p>
         </div>
 
         <div class="content">
-            <div class="about-section">
-                <h2>About Secure Alert Messages</h2>
-                <p>Secure Alert Messages is a trusted provider of transactional notification services. We help businesses communicate important, time-sensitive information to their customers instantly — including account updates, payment confirmations, delivery notifications, and security alerts.</p>
-                <p>Our platform delivers millions of reliable messages each month for companies of all sizes. We focus on compliance, speed, and accuracy so your customers always receive the information they need, when they need it.</p>
-            </div>
-
-            <div class="features">
-                <div class="feature">
-                    <h3>📨 Transactional Alerts</h3>
-                    <p>Payment confirmations, shipping updates, and account notifications</p>
-                </div>
-                <div class="feature">
-                    <h3>🔐 Security Notifications</h3>
-                    <p>Login alerts, password changes, and suspicious activity warnings</p>
-                </div>
-                <div class="feature">
-                    <h3>⚡ Instant Delivery</h3>
-                    <p>Messages reach customers in seconds with 99.9% uptime</p>
-                </div>
+            <div class="use-case-box">
+                <h3>📨 Why subscribe?</h3>
+                <p>Get real-time transactional alerts including payment confirmations, shipping updates, account security notifications, and appointment reminders. No marketing messages. Ever.</p>
             </div>
 
             <div class="optin-form">
@@ -277,48 +158,36 @@
                 <form action="#" method="POST">
                     <div class="form-group">
                         <label>Full Name</label>
-                        <input type="text" name="name" placeholder="John Smith" required>
+                        <input type="text" placeholder="John Smith" required>
                     </div>
                     <div class="form-group">
-                        <label>Mobile Number (SMS)</label>
-                        <input type="tel" name="phone" placeholder="+1 (555) 123-4567" required>
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+1 (555) 123-4567" required>
                     </div>
                     <div class="form-group">
-                        <label>Email Address (Optional)</label>
-                        <input type="email" name="email" placeholder="john.smith@example.com">
+                        <label>Email (Optional)</label>
+                        <input type="email" placeholder="john@example.com">
                     </div>
 
+                    <!-- CHECKBOX IS BLANK - NOT PRE-CHECKED -->
                     <div class="checkbox-group">
-                        <input type="checkbox" name="optin_consent" value="yes" id="consent_checkbox">
-                        <label for="consent_checkbox">
-                            I consent to receive <strong>transactional alerts and notifications</strong> from <strong>Secure Alert Messages</strong> via SMS text message. 
-                            I understand that message frequency depends on my account activity or transactions. 
-                            Standard message and data rates may apply. 
-                            I can reply <strong>STOP</strong> to cancel at any time or <strong>HELP</strong> for assistance.
+                        <input type="checkbox" id="consent">
+                        <label for="consent">
+                            I consent to receive <strong>transactional alerts</strong> from <strong>Secure Alert Messages</strong> via SMS. 
+                            Message frequency varies. Msg & data rates may apply. 
+                            Reply <strong>STOP</strong> to unsubscribe or <strong>HELP</strong> for assistance.
                         </label>
                     </div>
 
-                    <button type="submit" class="btn-submit">Subscribe to Alerts →</button>
+                    <button type="submit" class="btn-submit">Subscribe</button>
                 </form>
-                <div class="disclaimer">
-                    By subscribing, you agree to our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a>. 
-                    This service is for transactional notifications only. No marketing or promotional messages will be sent.
-                </div>
             </div>
         </div>
 
         <div class="footer">
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a> | 
-                <a href="terms.html">Terms of Service</a> | 
-                <a href="#">Cookie Policy</a>
-            </div>
-            <div class="copyright">
-                © 2025 Secure Alert Messages LLC. All rights reserved. | 8183 Twin Bridges Trl, Missouri, United States
-            </div>
-            <div class="copyright">
-                Reply STOP to unsubscribe | Reply HELP for assistance | Msg & data rates may apply
-            </div>
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="terms.html">Terms of Service</a>
+            <p style="color:#5a6e96; font-size:12px; margin-top:15px;">© 2025 Secure Alert Messages LLC</p>
         </div>
     </div>
 </body>

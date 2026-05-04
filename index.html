@@ -39,12 +39,13 @@
 
         .header h1 {
             font-size: 2.2rem;
-            color: white;
+            color: #ffffff;
         }
 
         .header p {
             color: #8aa3cc;
             margin-top: 10px;
+            font-size: 1.1rem;
         }
 
         .content {
@@ -60,12 +61,14 @@
         }
 
         .use-case-box h3 {
-            color: #c0d4ff;
+            color: #ffffff;
             margin-bottom: 10px;
+            font-size: 1.2rem;
         }
 
         .use-case-box p {
-            color: #b8c7e7;
+            color: #c0d4ff;
+            line-height: 1.5;
         }
 
         .optin-form {
@@ -76,9 +79,10 @@
         }
 
         .optin-form h3 {
-            color: #c0d4ff;
+            color: #ffffff;
             margin-bottom: 20px;
             text-align: center;
+            font-size: 1.4rem;
         }
 
         .form-group {
@@ -88,7 +92,8 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: #b0c4f0;
+            color: #c0d4ff;
+            font-weight: 500;
         }
 
         .form-group input {
@@ -97,22 +102,42 @@
             background: #0a0f1c;
             border: 1px solid #2a3a5c;
             border-radius: 8px;
-            color: white;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .form-group input::placeholder {
+            color: #5a6e96;
         }
 
         .checkbox-group {
             display: flex;
-            gap: 12px;
-            margin: 20px 0;
+            gap: 14px;
+            margin: 25px 0;
             background: #0a0f1c;
-            padding: 15px;
+            padding: 18px;
             border-radius: 12px;
+            border: 1px solid #2a3a5c;
         }
 
         .checkbox-group input {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* FIXED: Bright, readable text color for checkbox label */
+        .checkbox-group label {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #e0e8ff;
+            font-weight: normal;
+        }
+
+        .checkbox-group label strong {
+            color: #ffffff;
+            font-weight: 700;
         }
 
         .btn-submit {
@@ -123,12 +148,18 @@
             border: none;
             border-radius: 40px;
             font-weight: bold;
+            font-size: 1rem;
             cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background: #3b5fef;
         }
 
         .footer {
             background: #070c18;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
             border-top: 1px solid #1a2538;
         }
@@ -137,6 +168,23 @@
             color: #6b8eff;
             text-decoration: none;
             margin: 0 10px;
+            font-size: 13px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer p {
+            color: #5a6e96;
+            font-size: 11px;
+            margin-top: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .header h1 { font-size: 1.5rem; }
+            .content { padding: 20px; }
+            .optin-form { padding: 20px; }
         }
     </style>
 </head>
@@ -170,6 +218,7 @@
                     </div>
 
                     <!-- CHECKBOX IS BLANK - NOT PRE-CHECKED -->
+                    <!-- TEXT COLOR IS NOW BRIGHT WHITE/BLUE FOR READABILITY -->
                     <div class="checkbox-group">
                         <input type="checkbox" id="consent">
                         <label for="consent">
@@ -187,7 +236,7 @@
         <div class="footer">
             <a href="privacy.html">Privacy Policy</a> | 
             <a href="terms.html">Terms of Service</a>
-            <p style="color:#5a6e96; font-size:12px; margin-top:15px;">© 2025 Secure Alert Messages LLC</p>
+            <p>© 2025 Secure Alert Messages LLC</p>
         </div>
     </div>
 </body>

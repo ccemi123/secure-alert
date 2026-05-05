@@ -45,7 +45,6 @@
         .header p {
             color: #8aa3cc;
             margin-top: 10px;
-            font-size: 1.1rem;
         }
 
         .content {
@@ -63,12 +62,10 @@
         .use-case-box h3 {
             color: #ffffff;
             margin-bottom: 10px;
-            font-size: 1.2rem;
         }
 
         .use-case-box p {
             color: #c0d4ff;
-            line-height: 1.5;
         }
 
         .optin-form {
@@ -82,7 +79,6 @@
             color: #ffffff;
             margin-bottom: 20px;
             text-align: center;
-            font-size: 1.4rem;
         }
 
         .form-group {
@@ -93,7 +89,6 @@
             display: block;
             margin-bottom: 8px;
             color: #c0d4ff;
-            font-weight: 500;
         }
 
         .form-group input {
@@ -103,11 +98,6 @@
             border: 1px solid #2a3a5c;
             border-radius: 8px;
             color: #ffffff;
-            font-size: 1rem;
-        }
-
-        .form-group input::placeholder {
-            color: #5a6e96;
         }
 
         .checkbox-group {
@@ -124,20 +114,16 @@
             width: 20px;
             height: 20px;
             margin-top: 2px;
-            flex-shrink: 0;
         }
 
-        /* FIXED: Bright, readable text color for checkbox label */
         .checkbox-group label {
             font-size: 14px;
             line-height: 1.5;
             color: #e0e8ff;
-            font-weight: normal;
         }
 
         .checkbox-group label strong {
             color: #ffffff;
-            font-weight: 700;
         }
 
         .btn-submit {
@@ -148,13 +134,7 @@
             border: none;
             border-radius: 40px;
             font-weight: bold;
-            font-size: 1rem;
             cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn-submit:hover {
-            background: #3b5fef;
         }
 
         .footer {
@@ -168,23 +148,12 @@
             color: #6b8eff;
             text-decoration: none;
             margin: 0 10px;
-            font-size: 13px;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
         }
 
         .footer p {
             color: #5a6e96;
             font-size: 11px;
             margin-top: 12px;
-        }
-
-        @media (max-width: 700px) {
-            .header h1 { font-size: 1.5rem; }
-            .content { padding: 20px; }
-            .optin-form { padding: 20px; }
         }
     </style>
 </head>
@@ -203,7 +172,9 @@
 
             <div class="optin-form">
                 <h3>Subscribe to Transactional Alerts</h3>
-                <form action="#" method="POST">
+                
+                <!-- FORM NOW USES javascript:void(0) TO PREVENT 405 ERROR -->
+                <form onsubmit="alert('Thank you for subscribing. This is a demo form. In production, you would receive SMS alerts.'); return false;">
                     <div class="form-group">
                         <label>Full Name</label>
                         <input type="text" placeholder="John Smith" required>
@@ -217,8 +188,6 @@
                         <input type="email" placeholder="john@example.com">
                     </div>
 
-                    <!-- CHECKBOX IS BLANK - NOT PRE-CHECKED -->
-                    <!-- TEXT COLOR IS NOW BRIGHT WHITE/BLUE FOR READABILITY -->
                     <div class="checkbox-group">
                         <input type="checkbox" id="consent">
                         <label for="consent">
